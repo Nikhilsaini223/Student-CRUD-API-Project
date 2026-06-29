@@ -2,6 +2,8 @@ const express = require('express');                         // Import the expres
 const app = express();                                      // Import the express module and create an instance of it
 const studentRoutes = require('./routes/students.routes');  // Import the student routes
 const connectDB = require('./config/database');             // Import the database connection function
+const auth = require('./middleware/auth');                  // Import the authentication middleware
+const userRoutes = require('./routes/users.routes');        // Import the user routes
 const {MulterError}  = require('multer');
 const cors = require('cors');
 const path = require('path');         
@@ -20,12 +22,22 @@ app.use(express.json());
 // Serve static files (like index.html, CSS, JS) from the "public" folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/uploads', express.static(path.join(__dirname,'uploads')))                 
+// Serve static files from the "uploads" folder for image access
+app.use('/uploads', express.static(path.join(__dirname,'uploads')))                  
 
-app.use(cors())
+// Enable CORS for all routes
+app.use(cors()) 
+
+// Use the user routes for any requests to /api/users
+app.use('/api/users', userRoutes); 
+
+// Apply the authentication middleware to all routes below this line
+app.use(auth)                          
 
 // express static files
 app.use('/api/students', studentRoutes);
+
+
 
 // Error handling middleware
 app.use((error, req, res, next) => {
