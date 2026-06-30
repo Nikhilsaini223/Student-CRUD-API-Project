@@ -42,8 +42,10 @@ router.get('/', async (req, res) => {
                 { last_name: { $regex: search, $options: 'i' } },
             ]
         }
-
+        // Count the total number of students that match the search query
         const totalStudents = await Student.countDocuments(query);
+
+        // Calculate the total number of pages based on the total number of students and the limit per page
         const totalPage = Math.ceil(totalStudents / limit);
 
         const students = await Student.find(query)

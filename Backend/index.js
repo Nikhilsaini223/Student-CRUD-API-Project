@@ -22,7 +22,7 @@ app.use(express.json());
 // Serve static files (like index.html, CSS, JS) from the frontend public folder
 app.use(
   express.static(
-    path.join(__dirname, "..", "Frontend CRUD-API Project", "public"),
+    path.join(__dirname, "..", "Frontend", "public"),
   ),
 );
 
