@@ -4,14 +4,21 @@ const studentRoutes = require("./routes/students.routes"); // Import the student
 const connectDB = require("./config/database"); // Import the database connection function
 const auth = require("./middleware/auth"); // Import the authentication middleware
 const userRoutes = require("./routes/users.routes"); // Import the user routes
-const { MulterError } = require("multer");
-const cors = require("cors");
-const path = require("path");
+const { MulterError } = require("multer");   // Import the MulterError class from the multer module
+const ratelimit = require("express-rate-limit"); // Import the express-rate-limit module
+const cors = require("cors");  // Import the CORS middleware to enable Cross-Origin Resource Sharing
+const path = require("path");  // Import the path module to work with file and directory paths
 
 // Connect to MongoDB
 connectDB();
 
 const PORT = process.env.PORT;
+
+const limiter = ratelimit({
+  windowMs: 1000 * 60, //1 minute
+  max: 5, // Limit each IP to 5 requests per windowMs
+  message: "Too many requests from this IP, please try again after sometime",
+});
 
 // express application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: false }));
@@ -31,6 +38,8 @@ app.use("/uploads", express.static(path.join(__dirname,"uploads")));
 
 // Enable CORS for all routes
 app.use(cors());
+
+app.use(limiter); // Apply the rate limiting middleware to all requests
 
 // Use the user routes for any requests to /api/users
 app.use("/api/users", userRoutes);
