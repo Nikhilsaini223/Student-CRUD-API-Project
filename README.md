@@ -123,10 +123,13 @@ Follow these steps to run the application locally on your machine.
    ```
 3. Create a `.env` file in the root of the `Backend/` directory:
    ```env
-   PORT=3000
-   MONGO_URL=mongodb://127.0.0.1:27017/Student-crud-api
-   JWT_SECRET=your_super_secret_jwt_key
+   PORT=your_port_number
+   MONGO_URL=your_mongodb_connection_uri
+   JWT_SECRET=your_secret_jwt_token
    ```
+
+   > [!WARNING]
+   > Never commit your `.env` file or share your actual credentials/database connection strings. Make sure `.env` is listed in your `.gitignore` file.
 4. Start the development server (uses `nodemon` for auto-reloading):
    ```bash
    npm start
