@@ -1,0 +1,9 @@
+# Dependency directories
+node_modules/
+Backend/node_modules/
+
+# Environment variables
+Backend/.env
+
+# Local uploads
+Backend/uploads/

@@ -4,7 +4,8 @@
 [![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 [![JSON Web Tokens](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)](https://jwt.io/)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 A professional, full-stack (MERN) web application featuring a secure backend API and a dynamic, responsive frontend dashboard. The project allows administrators to register, authenticate securely, and perform comprehensive Create, Read, Update, and Delete (CRUD) operations on student records—complete with profile picture uploads, search queries, pagination, and defensive security measures like API rate limiting.
 
@@ -26,14 +27,14 @@ A professional, full-stack (MERN) web application featuring a secure backend API
 
 ### 💻 Client-Side Dashboard
 * **Dynamic Single-Page Feel**: Interactive UI utilizing JavaScript `Fetch API` for asynchronous, page-refresh-free actions.
-* **Bootstrap 5 UI**: Styled with clean modals, cards, table layouts, and custom interactive states.
+* **Custom Vanilla CSS UI**: Styled completely using a custom CSS variable system, custom layouts, and custom responsive media queries (with Bootstrap JS utility used solely for programmatic modal control).
 * **Authorization Guard**: Front-end router pattern that intercepts page access, checking for valid local storage tokens, and redirecting guest users to the login page.
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **Frontend**: HTML5, CSS3, JavaScript (ES6+), Bootstrap 5 (CSS/JS components), LocalStorage Auth cache
+* **Frontend**: HTML5, CSS3 (custom styled), JavaScript (ES6+), Bootstrap 5 JS (modal behavior control), LocalStorage Auth cache
 * **Backend**: Node.js, Express.js (REST API design)
 * **Database**: MongoDB database with Mongoose ODM modeling
 * **Dependencies**:
@@ -62,16 +63,18 @@ Student-CRUD-API-Project/
 │   │   └── users.routes.js      # Register, Login, and Logout handlers
 │   ├── uploads/                 # Server storage directory for profile images
 │   ├── .env                     # Environment configurations (Port, DB URI, JWT secret)
+│   ├── .gitignore               # Backend git ignore rules (node_modules, .env, uploads)
 │   ├── index.js                 # Express server configuration and main entry point
 │   └── package.json             # Backend dependencies and scripts
-└── Frontend/
-    └── public/
-        ├── js/
-        │   └── script.js        # AJAX Authentication scripts
-        ├── index.html           # Login page UI
-        ├── register.html        # Registration page UI
-        ├── student.html         # Administrative dashboard, tables, and CRUD Modals
-        └── style.css            # Custom UI stylesheet
+├── Frontend/
+│   └── public/
+│       ├── js/
+│       │   └── script.js        # AJAX Authentication scripts
+│       ├── index.html           # Login page UI
+│       ├── register.html        # Registration page UI
+│       ├── student.html         # Administrative dashboard, tables, and CRUD Modals
+│       └── style.css            # Custom UI stylesheet
+└── .gitignore                   # Root git ignore rules (node_modules, Backend/.env, etc.)
 ```
 
 ---
