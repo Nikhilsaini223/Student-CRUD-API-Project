@@ -34,7 +34,7 @@ A professional, full-stack (MERN) web application featuring a secure backend API
 
 ## 🛠️ Tech Stack
 
-* **Frontend**: HTML5, CSS3 (custom styled), JavaScript (ES6+), Bootstrap 5 JS (modal behavior control), LocalStorage Auth cache
+* **Frontend**: HTML5, CSS3 (custom styled), JavaScript (ES6+), LocalStorage Auth cache
 * **Backend**: Node.js, Express.js (REST API design)
 * **Database**: MongoDB database with Mongoose ODM modeling
 * **Dependencies**:
@@ -49,7 +49,7 @@ A professional, full-stack (MERN) web application featuring a secure backend API
 ## 📁 Directory Structure
 
 ```text
-Student-CRUD-API-Project/
+CRUD-API Project/
 ├── Backend/
 │   ├── config/
 │   │   └── database.js          # MongoDB database connection logic
@@ -63,7 +63,6 @@ Student-CRUD-API-Project/
 │   │   └── users.routes.js      # Register, Login, and Logout handlers
 │   ├── uploads/                 # Server storage directory for profile images
 │   ├── .env                     # Environment configurations (Port, DB URI, JWT secret)
-│   ├── .gitignore               # Backend git ignore rules (node_modules, .env, uploads)
 │   ├── index.js                 # Express server configuration and main entry point
 │   └── package.json             # Backend dependencies and scripts
 ├── Frontend/
@@ -71,7 +70,7 @@ Student-CRUD-API-Project/
 │       ├── js/
 │       │   └── script.js        # AJAX Authentication scripts
 │       ├── index.html           # Login page UI
-│       ├── register.html        # Registration page UI
+│       ├── Register.html        # Registration page UI
 │       ├── student.html         # Administrative dashboard, tables, and CRUD Modals
 │       └── style.css            # Custom UI stylesheet
 └── .gitignore                   # Root git ignore rules (node_modules, Backend/.env, etc.)
